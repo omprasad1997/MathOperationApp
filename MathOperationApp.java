@@ -3,6 +3,7 @@ package com.blbz;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.Iterator;
 
 public class MathOperationApp {
@@ -38,10 +39,22 @@ public class MathOperationApp {
 		myList.forEach(myListAction);
 
 		myList.forEach(n->{
-			System.out.println("Mth4: forEach Lamda imp Values::"+n);
+			System.out.println("Mth5: forEach Lamda imp Values::"+n);
 		});
+		
+		Function<Integer,Double>doubleFunction = Integer::doubleValue;
+		myList.forEach(n->{
+			System.out.println("Mth6: forEach Lamda double Values::"+
+					doubleFunction.apply(n));
+		});
+		
+		Predicate<Integer> isEvenFunction = n -> n%2 == 0;
+		myList.forEach(n->{
+			System.out.println("Mth7: forEach Lamda double Values::"+n+
+								"check for Even: " + isEvenFunction.test(n));
+		});
+		
 	}
-
 }
 
 
