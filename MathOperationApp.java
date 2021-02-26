@@ -1,6 +1,7 @@
 package com.blbz;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -36,6 +37,19 @@ public class MathOperationApp {
 				  		.findFirst()
 				  		.orElse(null);
 		System.out.println("Mth10: First Even: " +first);	
+	
+		//Minimum and Maximum Even numbers
+		Integer min = myList.stream()
+				.filter(isEvenFunction)
+				.min((n1,n2)->n1-n2)
+				.orElse(null);
+		System.out.println("Mth11: Min Even: " + min);	
+		
+		Integer max = myList.stream()
+				.filter(isEvenFunction)
+				.max(Comparator.comparing(Integer::intValue))
+				.orElse(null);
+		System.out.println("Mth12: Max Even: " + max);
 	}
 }
 
