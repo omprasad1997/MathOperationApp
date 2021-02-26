@@ -28,8 +28,7 @@ public class MathOperationApp {
 								  .filter(isEvenFunction)
 								  .map(toDoubleFunction)
 								  .collect(Collectors.toList());
-		System.out.println("Mth9: Printing Double List: " +streamList);
-								   	
+		System.out.println("Mth9: Printing Double List: " +streamList);							   	
 	}
 }
 
