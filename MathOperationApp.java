@@ -12,8 +12,7 @@ public class MathOperationApp {
 
 		List<Integer> myList = new ArrayList<Integer>();
 		for(int i =0;i<5;i++) myList.add(i);
-		
-		
+			
 		Function<Integer,Double>toDoubleFunction = Integer::doubleValue;
 		Predicate<Integer> isEvenFunction = n -> n%2 == 0;
 		
