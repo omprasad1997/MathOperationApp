@@ -50,6 +50,12 @@ public class MathOperationApp {
 				.max(Comparator.comparing(Integer::intValue))
 				.orElse(null);
 		System.out.println("Mth12: Max Even: " + max);
+	
+		//Sum,Count and Average of numbers
+		Integer sum = myList.stream()
+				.reduce(0, Integer::sum);
+		long count = myList.stream().count();
+		System.out.println("Mth13: Avg of: " + sum +"/"+count+"="+ sum/count);
 	}
 }
 
