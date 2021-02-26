@@ -64,6 +64,11 @@ public class MathOperationApp {
 		
 		System.out.println("allEven: " + allEven + "\n"+ "oneEven:"+oneEven
 				+"\n"+ "noneMutliOfSix:"+noneMutliOfSix);
+	
+		List<Integer> sortList = myList.stream()
+				  				.sorted()
+				  				.collect(Collectors.toList());
+		System.out.println("Mth14: Printing sorted List: " + sortList);
 	}
 }
 
