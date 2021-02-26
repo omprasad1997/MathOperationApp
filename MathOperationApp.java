@@ -11,7 +11,7 @@ public class MathOperationApp {
 	public static void main(String[] args) {
 
 		List<Integer> myList = new ArrayList<Integer>();
-		for(int i =0;i<5;i++) myList.add(i);
+		for(int i=1;i<5;i++) myList.add(i);
 			
 		Function<Integer,Double>toDoubleFunction = Integer::doubleValue;
 		Predicate<Integer> isEvenFunction = n -> n%2 == 0;
@@ -28,6 +28,14 @@ public class MathOperationApp {
 								  .map(toDoubleFunction)
 								  .collect(Collectors.toList());
 		System.out.println("Mth9: Printing Double List: " +streamList);							   	
+		
+		//Find first even number
+		Integer first = myList.stream()
+				  		.filter(isEvenFunction)
+				  		.peek(n->System.out.println("Peak Even Number: "+n))
+				  		.findFirst()
+				  		.orElse(null);
+		System.out.println("Mth10: First Even: " +first);	
 	}
 }
 
